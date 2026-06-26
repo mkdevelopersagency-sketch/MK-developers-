@@ -150,15 +150,8 @@
     position:relative;
     white-space:nowrap;
   }
-  .tagline{
-    margin-top:16px;
-    font-size:18px;
-    font-weight:600;
-    color:var(--teal);
-    font-family:'Space Grotesk', sans-serif;
-  }
   .hero p.lead{
-    margin-top:14px;
+    margin-top:22px;
     font-size:18px;
     line-height:1.6;
     color:rgba(234,241,251,0.72);
@@ -543,7 +536,6 @@
   <div>
     <span class="eyebrow"><span class="pulse"></span>WEB · AI · AUTOMATION</span>
     <h1>Your business deserves more than an Instagram bio.</h1>
-    <p class="tagline">We help businesses get more customers and automate follow-up.</p>
     <p class="lead">We build conversion-ready websites, AI chatbots and automations for local businesses still running on DMs and WhatsApp. Look professional. Capture every lead. Grow on autopilot.</p>
     <div class="hero-cta">
       <a href="#pricing" class="btn btn-primary">See Packages</a>
@@ -712,6 +704,42 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+<!-- MK Dev Sales Agent — n8n chat widget -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  :root {
+    --chat--color-primary: #3B82F6;
+    --chat--color-primary-shade-50: #2563EB;
+    --chat--color-secondary: #38BDF8;
+    --chat--toggle--background: #2563EB;
+    --chat--toggle--hover--background: #3B82F6;
+    --chat--header--background: #101B30;
+    --chat--header--color: #EAF1FB;
+  }
+</style>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://mkdevagency.app.n8n.cloud/webhook/59c6dc69-5079-4fc6-aba3-9709984b4727/chat',
+    mode: 'window',
+    showWelcomeScreen: true,
+    initialMessages: [
+      "Hey there! 👋",
+      "What brings you to MK Dev today?"
+    ],
+    i18n: {
+      en: {
+        title: 'Chat with MK Dev',
+        subtitle: "We typically reply right away.",
+        inputPlaceholder: 'Type your message...',
+        getStarted: 'New Conversation',
+        footer: ''
+      }
+    }
+  });
 </script>
 
 </body>
